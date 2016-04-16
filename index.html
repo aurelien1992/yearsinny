@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Google Spreadsheet JSON Example</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.5/tabletop.min.js"></script>
+		<script src="https://cdn.rawgit.com/CooperUnion/javascript-learning/master/tabletop-simple.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDD3o_vzkcWmw4-yDtuFZ0F4lioqWn8eU8"></script>
+    <script src="http://cooper-union-maps-proxy.herokuapp.com/js/draw.js"></script>
+
+		<script>
+			$(document).ready(function(){
+
+					//configure spreadsheet
+				var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1F44x7CJBqr_0_EZoIviUg_ZJ7Ioxw8U9Zg6AHIqC0yg/pubhtml';
+
+				getSpreadsheetJSON(public_spreadsheet_url, function(response){
+					console.log(response);
+
+
+					var avg = 0;
+          for (i=0; i<response.length; i++){
+            $("<h1>"+response[i].years +"</h1>").appendTo("body");
+
+						avg += response[i].years / response.length;
+          };
+
+
+							console.log(avg);
+							$("<h1>"+avg+"</h1>").appendTo("body");
+
+
+        //  var favoriteFood = response[i].food ;
+
+        //  $.getJSON("http://cooper-union-instagram-proxy.herokuapp.com/search/tag/\'favoriteFood\'", function(response){
+        //      console.log(response);
+            });
+
+
+
+
+
+
+
+
+
+            //.css({
+            //  "backgroundColor":response[0].background,
+            //  "fontSize":response[0].size,
+            //  "color":response[0].color
+          //  });
+
+              });
+
+
+		</script>
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+	</body>
+</html>
