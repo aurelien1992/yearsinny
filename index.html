@@ -20,15 +20,18 @@
 
 					var avg = 0;
           for (i=0; i<response.length; i++){
-            $("<h1>"+response[i].years +"</h1>").appendTo("body");
+            $("<h1>"+response[i].years +"</h1>").appendTo(".numbers");
 
 						avg += response[i].years / response.length;
           };
 
 
 							console.log(avg);
-							$("<h1>"+avg+"</h1>").appendTo("body");
+							$("<h1>"+avg+"</h1>").appendTo(".white");
 
+							$(".white").click(function() {
+  							$(".white").toggleClass("answer");
+								});
 
         //  var favoriteFood = response[i].food ;
 
@@ -56,9 +59,83 @@
 		</script>
 		<style>
 
+		body {
+			background-image: url(NY.jpg);
+			background-repeat: no-repeat;
+		}
+
+		img {
+			margin : 50px;
+			position: relative;
+		}
+
+		.white {
+			height : 80px;
+			width : 50px;
+			background-color: white;
+			margin : 300px;
+			padding: 10px;
+			padding-left: 50px;
+			font-family: sans-serif;
+			position: absolute;
+			-webkit-transition: width 2s, opacity 2s;
+			opacity : 0;
+		}
+
+
+
+		.answer {
+			width : 500px;
+			opacity: 1;
+		}
+
+		.question {
+			width : 400px;
+			padding: 20px;
+			padding-left: 50px;
+			position: absolute;
+
+		}
+		h2 {
+			font-family: sans-serif;
+			text-decoration: overline;
+		}
+
+		h3 {
+			font-family: sans-serif;
+			color: white;
+			font-size: 40px;
+			position: absolute;
+			margin: 330px;
+		}
+
+		.numbers {
+			height : 30px;
+			width : 1000px;
+			margin : 100px;
+			margin-top: 200px;
+			padding: 10px;
+			padding-left: 50px;
+			font-family: sans-serif;
+			position: absolute;
+			font-size: 10px;
+			color: white;
+
+		}
+
+
 		</style>
 
 	</head>
 	<body>
+		<div class="question">
+			<h2> How many years in average have people of this room been living in New York ? </h2>
+		</div>
+		<div class="questionMark"><h3>?</h3></div>
+		<div class="white"></div>
+		<div class="numbers"></div>
+
+
+
 	</body>
 </html>
